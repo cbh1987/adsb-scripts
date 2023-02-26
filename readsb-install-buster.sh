@@ -204,6 +204,8 @@ bash tar1090-install.sh /run/readsb
 rm -rf /usr/local/share/tar1090
 git clone https://gitee.com/smallmeng/tar1090-cn /usr/local/share/tar1090
 
+sed -i -e "s/你的UUID是：/你的UUID是：$(cat /root/get_message/UUID)/g" /usr/local/share/tar1090/html/index.html
+
 rm -rf /etc/motd
 wget -P /etc https://gitee.com/smallmeng/files/raw/master/motd
 
