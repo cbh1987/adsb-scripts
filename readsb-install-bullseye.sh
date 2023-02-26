@@ -7,6 +7,14 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
+sed -i 's#raspbian.raspberrypi.org#mirrors.tuna.tsinghua.edu.cn/raspberry-pi-os#g' /etc/apt/sources.list
+
+sed -i '1 i\deb-src http://mirrors.tuna.tsinghua.edu.cn/raspberry-pi-os/raspbian/ bullseye main non-free contrib rpi' /etc/apt/sources.list
+
+sed -i 's#archive.raspberrypi.org/debian/ buster main#mirrors.tuna.tsinghua.edu.cn/raspberrypi/ bullseye main ui#g' /etc/apt/sources.list.d/raspi.list
+
+apt update
+
 set -e
 trap 'echo "[错误] 第 $LINENO 行命令在执行 $BASH_COMMAND 时出现错误"' ERR
 renice 10 $$

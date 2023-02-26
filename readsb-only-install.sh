@@ -190,27 +190,12 @@ chmod a+x /usr/local/bin/readsb-set-location
 echo --------------
 cd "$ipath"
 
-wget -O tar1090-install.sh https://gitee.com/smallmeng/tar1090-en/raw/master/install.sh
-bash tar1090-install.sh /run/readsb
-
-rm -rf /etc/motd
-wget -P /etc https://gitee.com/smallmeng/files/raw/master/motd
-
-if ! systemctl show readsb | grep 'ExecMainStatus=0' -qs; then
-        echo
-        echo "             readsb+tar1090 已经安装完成！但是目前 readsb 服务未运行！"
-        echo "                       因此需要重启设备以启动 readsb 服务"
-        echo "                 tar1090的Web页面为 http://$(ip route get 1.2.3.4 | grep -m1 -o -P 'src \K[0-9,.]*')/tar1090"
-        echo "                     Web界面将显示错误，直至 readsb 正常运行"
-        echo
-        echo
-        echo "                     不要忘记使用十进制纬度和经度设置您的位置"
-        echo "                                    例如:"
-        echo "                   sudo readsb-set-location 50.12344 10.23429"
-        echo 
-        echo "                               ！！！注意！！！ "        
-        echo "                             请不要尝试将数据传给"
-        echo "      Flightradar24、Flightaware、PlaneFinder、RadarBox等境外飞机跟踪网站"
-        echo "                   这种行为严重违反《中华人民共和国无线电管理条例》"
-        echo
-    fi
+echo
+echo "             readsb已经安装或更新完成！但是目前 readsb 服务未运行！"
+echo "                       因此需要重启设备以启动 readsb 服务"
+echo
+echo "                               ！！！注意！！！ "        
+echo "                             请不要尝试将数据传给"
+echo "      Flightradar24、Flightaware、ADS-B Exchange、RadarBox等境外飞机跟踪网站"
+echo "                   这种行为严重违反《中华人民共和国无线电管理条例》"
+echo
