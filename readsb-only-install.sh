@@ -186,10 +186,6 @@ systemctl restart readsb
 EOF
 chmod a+x /usr/local/bin/readsb-set-location
 
-
-echo --------------
-cd "$ipath"
-
 echo
 echo "             readsb已经安装或更新完成！但是目前 readsb 服务未运行！"
 echo "                       因此需要重启设备以启动 readsb 服务"
