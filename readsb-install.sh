@@ -196,8 +196,8 @@ bash tar1090-install.sh /run/readsb
 rm -rf /usr/local/share/tar1090
 git clone https://github.com/cbh1987/tar1090-cn /usr/local/share/tar1090
 
-rm -rf /etc/motd
-wget -P /etc https://github.com/cbh1987/files/master/motd
+# rm -rf /etc/motd
+# wget -P /etc https://gitee.com/smallmeng/files/raw/master/motd
 
 if ! systemctl show readsb | grep 'ExecMainStatus=0' -qs; then
         echo
