@@ -11,7 +11,7 @@ set -e
 trap 'echo "[错误] 第 $LINENO 行命令在执行 $BASH_COMMAND 时出现错误"' ERR
 renice 10 $$
 
-repository="https://gitee.com/smallmeng/readsb.git"
+repository="https://github.com/cbh1987/readsb.git"
 
 # blacklist kernel driver as on ancient systems
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
@@ -27,7 +27,7 @@ mkdir -p $ipath
 
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
     # make sure the rtl-sdr rules are present on ancient systems
-    wget -O /tmp/rtl-sdr.rules https://gitee.com/smallmeng/adsb-scripts/raw/master/osmocom-rtl-sdr.rules
+    wget -O /tmp/rtl-sdr.rules https://github.com/cbh1987/adsb-scripts/raw/master/osmocom-rtl-sdr.rules
     cp /tmp/rtl-sdr.rules /etc/udev/rules.d/
 fi
 
@@ -197,7 +197,7 @@ rm -rf /usr/local/share/tar1090
 git clone https://github.com/cbh1987/tar1090-cn /usr/local/share/tar1090
 
 rm -rf /etc/motd
-# wget -P /etc https://gitee.com/smallmeng/files/raw/master/motd
+# wget -P /etc https://github.com/cbh1987/files/raw/master/motd
 wget -P /etc https://github.com/cbh1987/files/raw/master/motd
 
 if ! systemctl show readsb | grep 'ExecMainStatus=0' -qs; then
