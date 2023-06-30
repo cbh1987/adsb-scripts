@@ -198,7 +198,8 @@ git clone https://github.com/cbh1987/tar1090-cn /usr/local/share/tar1090
 
 rm -rf /etc/motd
 # wget -P /etc https://github.com/cbh1987/files/raw/master/motd
-wget -P /etc https://github.com/cbh1987/files/raw/master/motd
+wget -P /etc https://github.com/cbh1987/files/blob/main/motd
+
 
 if ! systemctl show readsb | grep 'ExecMainStatus=0' -qs; then
         echo
