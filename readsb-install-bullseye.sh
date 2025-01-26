@@ -19,7 +19,7 @@ set -e
 trap 'echo "[错误] 第 $LINENO 行命令在执行 $BASH_COMMAND 时出现错误"' ERR
 renice 10 $$
 
-repository="https://gitee.com/smallmeng/readsb.git"
+repository="https://github.com/cbh1987/readsb.git"
 
 # blacklist kernel driver as on ancient systems
 if grep -E 'wheezy|jessie' /etc/os-release -qs; then
